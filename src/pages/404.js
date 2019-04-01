@@ -2,13 +2,33 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { css } from "glamor"
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+const styles = {
+  notfoundContainer: {
+    textAlign: "center",
+    height: "80vh",
+  },
+}
+
+const IndexPage = () => (
+  <Layout
+    page={{
+      title: "Page not found",
+      description: "The requested page does not exist",
+      keywords: "pad, node.js, 404, not found",
+    }}
+  >
+    <SEO title="NOT FOUND" keywords={[`gatsby`, `application`, `react`]} />
+    <div>
+      <section>
+        <div className={css(styles.notfoundContainer)}>
+          <h2>NOT FOUND</h2>
+          <p>You just hit a route that doesn't exist... the sadness.</p>
+        </div>
+      </section>
+    </div>
   </Layout>
 )
 
-export default NotFoundPage
+export default IndexPage
