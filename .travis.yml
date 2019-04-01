@@ -3,7 +3,7 @@ node_js:
   - "10"
 script:
   - gatsby build
-  - echo 'hbase.js.org' > public/CNAME
+  - echo 'pad-project.js.org' > public/CNAME
 deploy:
   provider: pages
   skip-cleanup: true
