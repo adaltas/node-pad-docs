@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "10"
+script:
+  - gatsby build
+  - echo 'hbase.js.org' > public/CNAME
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: false
+  local-dir: public
+  on:
+    branch: master
+env:
+  global:
+  - secure: "Hkv7V+TQjQOzo0rniw/mHCfLT66OgEY6O819s0aFpJJh7MKchv1nxZBe1ZfdRX5Ak0VIqyBiIKXQtfkd5D0Uz7pTYWr4qU9bgPfJ/sOtymDxDIj9dNZBgf9MQ0rJKZCzaiFIjdPH1k3ouT/mwINS0yijywzd4E+7KAFkRoP7ImwHBJKF0PzvcHimh0Pikrn9dJ97/WMW2d9Ow68IbSlv6G/Xw1cq8W27ozyRVoWWISiwX9LoqMIgE0ZKFhvzyttaxJ0GkRjIblFB21qPp1rbYdOl3l3qNzGTceV90Q1BSsma0Xxvn/Qzj4P+hajQYkTDpI0V06sEYa8Labuh9FkSwJ/Of0UVzZ+4Stt9EK/kvD/ynPsPZvO4Ov4aN3nrFeFwRetzqNIo8QefR54oCYEork+nyU7yihsEqvetPJgV/CtPYDDXl0GOwcuGDpeCbUUpfZG3MxlD5ArP6EbLBBAyiXs4iff80pUFE1uLqZ3+bxIh4oV4vDthJ5EQjVaB/edN7j0TY6gPBHqibRqP41y7eBQ43jOb15xwzppdsat/1eMdK3TS67ULOBlyeqVkXLFiUrRScOQ7fIwg3ZXITKl/GtKlcxVxKIcn9sBgbtkYJEGXEicX8iYxx+nLVNOjScMzwLKlKVkrk5jUjLdxTtKn7S+Imk2aMCabpuBBNlqDGIw="
