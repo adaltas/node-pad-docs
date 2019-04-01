@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Node.js PAD`,
-    description: `Node.js Pad is a simple and elegant function to pad strings in both left and right directions.`,
+    description: `Node.js PAD is a simple and elegant function to pad strings in both left and right directions.`,
     author: `@adaltas`,
   },
   plugins: [
