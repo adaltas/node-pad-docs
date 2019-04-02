@@ -50,7 +50,6 @@ const styles = {
       background: "none !important",
       color: "#fff !important",
       fontSize: "1.2rem !important",
-      opacity: 0,
       transition: "opacity .5s ease-out",
       " span": {
         opacity: 0,
@@ -58,14 +57,13 @@ const styles = {
       },
     },
     " code.fired, code.fired span": {
-      opacity: 1,
+      opacity: "1 !important",
     },
     " img": {
-      opacity: 0,
       transition: "opacity .02s ease",
     },
     " img.fired": {
-      opacity: 1,
+      opacity: "1 !important",
     },
   },
   arrowContainer: {
@@ -186,6 +184,7 @@ class Banner extends Component {
             <div>
               <img
                 ref={this.img_1}
+                style={{ opacity: "0" }}
                 className={this.state.code1 ? "fired" : ""}
                 src={ArrowIcon}
                 alt={"Arrow right"}
@@ -194,6 +193,7 @@ class Banner extends Component {
             <div className={css(styles.hiddenXS)}>
               <img
                 ref={this.img_2}
+                style={{ opacity: "0" }}
                 className={this.state.code2 ? "fired" : ""}
                 src={ArrowIcon}
                 alt={"Arrow right"}
@@ -204,6 +204,7 @@ class Banner extends Component {
             <div>
               <code
                 ref={this.res_1}
+                style={{ opacity: "0" }}
                 className={this.state.code1 ? "fired" : ""}
               >
                 Hello...
@@ -212,6 +213,7 @@ class Banner extends Component {
             <div className={css(styles.hiddenXS)}>
               <code
                 ref={this.res_2}
+                style={{ opacity: "0" }}
                 className={this.state.code2 ? "fired" : ""}
               >
                 ....pad!
