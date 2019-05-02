@@ -28,9 +28,9 @@ Tests are executed with mocha. To install it, simple run `npm install` followed 
 It will install mocha and its dependencies in your project "node_modules" directory and run the test suite.
 The tests run against the CoffeeScript source files.
 
-To generate the JavaScript files, run `make build`.
+To generate the JavaScript files, run `npm run build`.
 
-The test suite is run online with [Travis][travis] against the versions 0.10 and 0.11 of Node.js.
+The test suite is run online with [Travis](https://travis-ci.com) against the versions 0.10 and 0.11 of Node.js.
 
 ## Testing
 
@@ -39,7 +39,7 @@ Clone the repo, install the development dependencies and run the suite:
 ```js
 git clone http://github.com/wdavidw/node-pad.git
 npm install
-make test
+npm run test
 ```
 
 ## Bugs
