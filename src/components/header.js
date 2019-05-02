@@ -12,6 +12,7 @@ const styles = {
     alignItems: "center",
     fontSize: "1.2rem",
     position: "relative",
+    zIndex: 100,
   },
   floatMenu: {
     position: "fixed !important",
