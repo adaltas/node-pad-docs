@@ -10,9 +10,9 @@ import TocToggleIcon from "../images/toc-toggle.svg"
 import EditIcon from "../images/icon-edit.svg"
 import "./layout.css"
 
-require("prismjs/themes/prism-tomorrow.css")
 import { css } from "glamor"
 import MenuIcon from "../images/menu.svg"
+require("prismjs/themes/prism-tomorrow.css")
 
 const styles = {
   switcher: {

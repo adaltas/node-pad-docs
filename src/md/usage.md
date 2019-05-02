@@ -28,6 +28,33 @@ var pad = require("pad")
 pad("pad", 5, "-") //  "pad--"
 ```
 
+## Bundles
+
+Node Pad comes in multiple flavours depending on your target environment:
+
+* CommonJS: `dist/pad.cjs.js`   
+  Bundle used by Node.js and compatible with ES5. It is declared inside the `package.json` by the `main` property and used by default with `require("pad")` in a Node.js environment.
+* ES module: `dist/pad.esm.js`   
+  Bundle using the ECMAScript standard defined in ES6 for working with modules. The path to the ES module is declared inside the `package.json` by the `module` property for ESM-aware tools like [Rollup](https://rollupjs.org) and [webpack 2+](https://webpack.js.org/).
+* UMD: `dis/pad.umd.js`
+  Bundle in the Universal Module Definition (UMD), a format compatible with both AMD and CommonJS.
+
+The CommonJS syntax to import Node Pad is:
+
+```js
+const pad = require("pad/dist/pad.cjs.js")
+// Or simply
+const pad = require("pad")
+```
+
+While the ES Modules syntax is:
+
+```js
+import pad from "pad/dist/pad.esm.js"
+// Or for ESM-aware tools
+import pad from "pad"
+```
+
 ## Options
 
 Options are provided as a third argument and are all optional. A string argument it is interpreted as the "char" option.

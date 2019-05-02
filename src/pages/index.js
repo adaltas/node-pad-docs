@@ -4,10 +4,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { css } from "glamor"
-import ApiIcon from "../images/icon-api.svg"
-import LightIcon from "../images/icon-light.svg"
-import MoustacheIcon from "../images/icon-moustache.svg"
-import LicenseIcon from "../images/icon-license.svg"
+import IconApi from "../images/icon-api.svg"
+import IconLight from "../images/icon-light.svg"
+import IconMoustache from "../images/icon-moustache.svg"
+import IconLicense from "../images/icon-license.svg"
+import IconBundles from "../images/icon-bundles.svg"
+import IconDocs from "../images/icon-docs.svg"
 
 // Syntax
 import SyntaxHighlighter, {
@@ -31,11 +33,6 @@ pad('pad', 5)      // "pad  "
 pad(5, 'pad')      // "  pad"
 pad('pad', 5, '+') // "pad++"
 pad(5, 'pad', '+') // "++pad"
-`.trim()
-
-const codeString4 = `
-const pad = require('pad/lib/es5')
-pad('pad', 5)      // "pad  "
 `.trim()
 
 const styles = {
@@ -86,37 +83,43 @@ const IndexPage = () => (
             <div>
               <div>
                 <div>
-                  <img src={ApiIcon} alt="Simple API" />
+                  <img src={IconApi} alt="Simple API" />
                 </div>
                 <span>Simple API</span>
               </div>
-              <div
-                className={css({
-                  "@media (max-width: 768px)": {
-                    position: "relative",
-                    top: "15px",
-                  },
-                })}
-              >
+              <div>
                 <div>
-                  <img src={LightIcon} alt="Light weight" />
+                  <img src={IconLight} alt="Light weight" />
                 </div>
-                <span className={css({ position: "relative", top: "-15px" })}>
-                  Light weight with only one dependency
+                <span>
+                  Light weight, 1 dependency
                 </span>
               </div>
             </div>
-
             <div>
               <div>
                 <div>
-                  <img src={MoustacheIcon} alt="Well tested, mature" />
+                  <img src={IconBundles} alt="CJS, ESM and UMD bundles" />
+                </div>
+                <span>CJS, ESM and UMD bundles</span>
+              </div>
+              <div>
+                <div>
+                  <img src={IconDocs} alt="Documented and tested" />
+                </div>
+                <span>Documented and tested</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>
+                  <img src={IconMoustache} alt="Well tested, mature" />
                 </div>
                 <span>Well tested, mature</span>
               </div>
               <div>
                 <div>
-                  <img src={LicenseIcon} alt="MIT License" />
+                  <img src={IconLicense} alt="MIT License" />
                 </div>
                 <span>MIT License</span>
               </div>
@@ -157,13 +160,10 @@ const IndexPage = () => (
             "./lib/index.d.ts" and declared inside the "package.json" file.
           </p>
           <p>
-            This package is written for ES6 supported by Node.js version 7.5 and
-            above. For older browsers or older versions of Node.js, use the
-            modules inside "./lib/es5".
+            Bundles in multiple formats are available: CommonJS, ESM and UMD.
+            Node.js and ESM-aware tools will automatically discover the
+            appropriate bundle format from the `package.json` declaration file.
           </p>
-          <SyntaxHighlighter language="javascript" style={tomorrow}>
-            {codeString4}
-          </SyntaxHighlighter>
         </div>
       </section>
     </div>
