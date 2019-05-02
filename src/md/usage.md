@@ -73,7 +73,7 @@ pad(6, "234", "0") // "000234"
 
 * `colors (boolean)` (boolean)
 
-Adjust to hidden terminal color characters, you may also use require 'pad/lib/colors' to avoid passing this option.
+Adjust to hidden terminal color characters.
 
 * `strip` (boolean)
 
