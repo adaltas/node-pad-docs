@@ -6,39 +6,11 @@ import Header from "./header"
 import Footer from "./footer"
 import Drawer from "./Drawer"
 import MenuMobile from "./MenuMobile"
-import TocToggleIcon from "../images/toc-toggle.svg"
-import EditIcon from "../images/icon-edit.svg"
 import "./layout.css"
 
 import { css } from "glamor"
 import MenuIcon from "../images/menu.svg"
 require("prismjs/themes/prism-tomorrow.css")
-
-const styles = {
-  switcher: {
-    position: "absolute",
-  },
-  buttonContainer: {
-    maxWidth: "800px",
-    margin: "0 auto",
-    position: "relative",
-    "> div": {
-      position: "absolute",
-      textAlign: "right",
-      width: "100%",
-      top: "3.5rem",
-      "> div": {
-        display: "inline-block",
-        " a": {
-          cursor: "pointer",
-        },
-        " img": {
-          width: "2rem",
-        },
-      },
-    },
-  },
-}
 
 require("typeface-roboto")
 
@@ -66,8 +38,6 @@ class Layout extends Component {
       open: false,
       breakpoint: 769,
     }
-    this.toc = React.createRef()
-    this.content = React.createRef()
   }
   componentDidMount() {
     this.headerNode = ReactDom.findDOMNode(this.refs.header)
@@ -111,14 +81,6 @@ class Layout extends Component {
       return { ...page.node.fields, ...page.node.frontmatter }
     })
 
-    const toggleToc = () => {
-      if (!this.props.page) return
-      const contentNode = ReactDom.findDOMNode(this.refs.content)
-      const tocNode = contentNode.querySelector(".toc")
-      if (!tocNode) return
-      const display = window.getComputedStyle(tocNode).display
-      tocNode.style.display = display === "none" ? "block" : "none"
-    }
     return (
       <Drawer
         breakpoint={this.state.breakpoint}
@@ -126,50 +88,18 @@ class Layout extends Component {
         onClickModal={() => this.setState({ open: false })}
         width={"23%"}
         main={
-          <div ref={this.content}>
+          <>
             <Header
               onMenuClick={toggle}
               ref="header"
               siteTitle={data.site.siteMetadata.title}
               isHome={isHome}
             />
-            <main
-              ref="content"
-              className={!isHome ? css(this.state.mainContainer) : ""}
-            >
-              {!isHome && (
-                <div className={css(styles.buttonContainer)}>
-                  <div>
-                    <div>
-                      <a
-                        onClick={toggleToc}
-                        aria-label="Toggle the TOC"
-                        data-for="toc-toggle"
-                        data-tip="Toggle the TOC"
-                      >
-                        <img src={TocToggleIcon} alt="Toc tool" />
-                      </a>
-                    </div>
-                    {!page.edit_url && (
-                      <div>
-                        <a
-                          target="_blank"
-                          href={page.edit_url}
-                          aria-label="Edit the content"
-                          data-for="edit"
-                          data-tip="Edit the content"
-                        >
-                          <img src={EditIcon} alt="Toc tool" />
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
+            <main className={!isHome ? css(this.state.mainContainer) : ""}>
               {children}
             </main>
             <Footer />
-          </div>
+          </>
         }
         drawer={<MenuMobile pages={pages} />}
       />
