@@ -553,11 +553,6 @@ section h2 {
   padding-bottom: 1rem;
 }
 
-.home-page section h2 {
-  text-align: center;
-  padding-top: 0;
-}
-
 section > div {
   max-width: 800px;
   margin: 0 auto;
