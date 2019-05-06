@@ -12,6 +12,7 @@ const styles = {
     width: "100%",
     padding: "1rem 0",
     position: "fixed",
+    zIndex: 100,
     "> div": {
       padding: "0",
       maxWidth: "800",

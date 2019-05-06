@@ -6,7 +6,7 @@ const styles_nav = {
     display: "block",
     lineHeight: "2rem",
     padding: ".2rem 0",
-    fontSize: "1.6rem",
+    fontSize: "1.4rem",
   },
   linkActive: {
     fontWeight: "bold",
@@ -48,7 +48,7 @@ const styles = {
     borderTop: "1px solid #916eb16b",
     padding: "1rem",
     textAlign: "normal",
-    fontSize: ".8rem",
+    fontSize: "1rem",
     position: "absolute",
     bottom: "0",
     color: "#fff",
