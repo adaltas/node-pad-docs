@@ -3,22 +3,11 @@ module.exports = {
     title: `Node.js PAD`,
     description: `Node.js PAD is a simple and elegant function to pad strings in both left and right directions.`,
     author: `@adaltas`,
+    siteUrl: `https://pad-project.js.org`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
@@ -59,5 +48,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-offline',
+    `gatsby-plugin-sitemap`,
   ],
 }
