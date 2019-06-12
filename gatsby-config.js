@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://pad-project.js.org`,
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -60,7 +61,7 @@ module.exports = {
         icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
     `gatsby-plugin-sitemap`,
   ],
 }
