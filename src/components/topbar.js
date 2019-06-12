@@ -27,7 +27,7 @@ const styles = {
       padding: "1rem 0",
     },
     "& *": {
-      verticalAlign: "-webkit-baseline-middle",
+      verticalAlign: "middle",
     },
   },
   iconContainer: {
@@ -60,7 +60,7 @@ const styles = {
   menu: {
     position: "absolute",
     padding: ".5rem",
-    top: "0",
+    top: ".5rem",
     left: ".75rem",
     "@media (min-width: 769px)": {
       display: "none",
