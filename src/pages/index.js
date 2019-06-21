@@ -71,6 +71,9 @@ const IndexPage = () => (
     <SEO
       title="PAD for Node.js"
       keywords={[`gatsby`, `application`, `react`]}
+      meta={[
+        { name: 'google-site-verification', content: 'ukvG8Ae6z6Ly-ABtoUMWzRAPMmn07QWlbRnot0AC5FA'}
+      ]}
     />
     <div className={css(styles.homePage)}>
       <section>
