@@ -61,7 +61,17 @@ module.exports = {
         icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-plugin-offline",
-    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://pad-project.js.org',
+        sitemap: 'https://pad-project.js.org/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
   ],
 }
