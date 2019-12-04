@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://pad-project.js.org/sitemap.xml
+Host: https://pad-project.js.org
